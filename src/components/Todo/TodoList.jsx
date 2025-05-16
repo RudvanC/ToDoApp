@@ -7,18 +7,18 @@ export default function TodoList() {
   return (
     <ul
       className="
-        max-w-xl mx-auto mt-10 p-4
-        bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900
-        rounded-xl
-        border border-cyan-600
-        shadow-lg shadow-cyan-600/40
-        backdrop-blur-md
+        max-w-xl mx-auto mt-10 p-6
+        bg-gradient-to-br from-blue-50 to-blue-100
+        rounded-2xl
+        border border-blue-200
+        shadow-lg shadow-blue-200/50
+        backdrop-blur-sm
         overflow-hidden
       "
     >
       {todos.length === 0 ? (
-        <li className="text-center text-cyan-400 italic py-6 select-none">
-          ¡No tienes tareas aún, agrega una y comienza a brillar! ✨
+        <li className="text-center text-blue-800 italic py-6 select-none">
+          ✨¡Aun no hay tareas, añade una! ✨
         </li>
       ) : (
         todos.map((todo) => <TodoItem key={todo.id} todo={todo} />)

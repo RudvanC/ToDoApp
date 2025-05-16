@@ -13,19 +13,19 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-50 p-8">
       <div
         className="
-          bg-gradient-to-tr from-gray-800 to-gray-900
+          bg-gradient-to-br from-blue-100 to-blue-50
           rounded-3xl
-          shadow-cyan-700/70 shadow-lg
+          shadow-2xl shadow-blue-200/50
           p-8
           w-full max-w-md
-          border border-cyan-600
+          border border-blue-800
           backdrop-blur-sm
         "
       >
-        <h1 className="text-3xl font-extrabold mb-6 text-center text-cyan-400 drop-shadow-lg">
+        <h1 className="text-4xl font-bold mb-8 text-center text-blue-800">
           My ToDo App <span className="text-green-400">✅</span>
         </h1>
 
@@ -37,20 +37,20 @@ export default function App() {
             placeholder="Escribe una tarea..."
             className="
               flex-grow
-              bg-gray-900 text-cyan-200 placeholder-cyan-500
-              border border-cyan-600
+              bg-white/80 text-blue-900 placeholder-blue-400
+              border border-blue-200
               rounded-xl
               px-4 py-3
-              focus:outline-none focus:ring-2 focus:ring-cyan-400
-              transition
-              shadow-inner
+              focus:outline-none focus:ring-2 focus:ring-blue-400
+              transition-all duration-200
+              shadow-sm
             "
           />
           <button
             onClick={handleAdd}
             className="
               bg-cyan-600
-              text-gray-900
+              text-white
               px-6 py-3
               rounded-xl
               font-semibold

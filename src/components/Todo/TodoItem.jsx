@@ -18,12 +18,12 @@ export default function TodoItem({ todo }) {
 
   return (
     <li
-      className="flex flex-col p-4 mb-4 rounded-lg
-        bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900
-        shadow-lg shadow-cyan-500/50
-        border border-cyan-600
-        text-cyan-100
-        transition-transform duration-200 hover:scale-[1.02]"
+      className="flex flex-col p-5 mb-4 rounded-xl
+        bg-white/90 backdrop-blur-sm
+        shadow-md shadow-blue-200/30
+        border border-blue-200/80
+        text-blue-900
+        transition-all duration-200 hover:scale-[1.01] hover:shadow-lg hover:shadow-blue-200/50"
     >
       {isEditing ? (
         <div className="flex items-center gap-3">
@@ -31,18 +31,18 @@ export default function TodoItem({ todo }) {
             type="text"
             value={newText}
             onChange={(e) => setNewText(e.target.value)}
-            className="flex-grow bg-gray-800 text-cyan-100 border border-cyan-500 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+            className="w-[130px] bg-white/80 text-blue-900 border border-blue-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-inner"
             autoFocus
           />
           <button
             onClick={handleSave}
-            className="bg-cyan-500 hover:bg-cyan-600 text-gray-900 font-semibold px-4 py-2 rounded-md shadow-md transition"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 rounded-lg shadow-sm transition-all duration-200"
           >
             Save
           </button>
           <button
             onClick={() => setIsEditing(false)}
-            className="bg-red-600 hover:bg-red-700 text-gray-100 font-semibold px-4 py-2 rounded-md shadow-md transition"
+            className="bg-rose-500 hover:bg-rose-600 text-white font-medium px-4 py-2 rounded-lg shadow-sm transition-all duration-200"
           >
             Cancel
           </button>
@@ -54,13 +54,15 @@ export default function TodoItem({ todo }) {
               type="checkbox"
               checked={todo.completed}
               onChange={() => toggleTodo(todo.id)}
-              className="w-6 h-6 accent-cyan-400 hover:accent-cyan-500 transition"
+              className={`w-5 h-5 rounded border-2 flex items-center justify-center ${
+                todo.completed
+                  ? "bg-blue-600 border-blue-600"
+                  : "border-blue-400"
+              } cursor-pointer transition-colors`}
             />
             <span
-              className={`text-lg font-semibold select-none ${
-                todo.completed
-                  ? "line-through text-gray-500 italic"
-                  : "text-cyan-100"
+              className={`text-lg font-medium select-none ${
+                todo.completed ? "line-through text-blue-400" : "text-blue-900"
               }`}
             >
               {todo.text}
@@ -70,11 +72,11 @@ export default function TodoItem({ todo }) {
             <button
               onClick={() => setIsEditing(true)}
               aria-label="Edit todo"
-              className="p-2 rounded-md hover:bg-cyan-700 transition"
+              className="p-2 text-blue-600 hover:text-blue-700 rounded-lg transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-cyan-400 hover:text-cyan-200"
+                className="h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -83,18 +85,18 @@ export default function TodoItem({ todo }) {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-7-7l7 7"
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
                 />
               </svg>
             </button>
             <button
               onClick={() => deleteTodo(todo.id)}
               aria-label="Delete todo"
-              className="p-2 rounded-md hover:bg-red-700 transition"
+              className=" text-rose-500 hover:text-rose-600 transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-red-500 hover:text-red-300"
+                className="h-5 w-5 text-rose-500 hover:text-rose-600"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
