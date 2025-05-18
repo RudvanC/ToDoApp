@@ -10,12 +10,12 @@ export default function App() {
 
   useEffect(() => {
     const fetchInitialData = async () => {
-      // Fetch Nicolas Cage quote
+      // Fetch Nicolas quote
       try {
         const quoteResponse = await axios.get('https://api.quotable.io/random?tags=motivational');
-        setCageQuote(`Nicolas Cage dice: "${quoteResponse.data.content}"`);
+        setCageQuote(`Nicolas dice: "${quoteResponse.data.content}"`);
       } catch (error) {
-        setCageQuote("Nicolas Cage está ocupado siendo increíble en este momento.");
+        setCageQuote("Nicolas está ocupado siendo increíble en este momento.");
       }
       
       // Fetch todos from json-server
