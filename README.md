@@ -15,9 +15,6 @@ Una aplicación de tareas minimalista pero poderosa, con estado global usando Zu
 🎨 TailwindCSS (estilos rápidos y bonitos)
 
 📦 Instalación
-bash
-Copiar
-Editar
 
 # Clonar repo
 
@@ -28,9 +25,7 @@ cd todo-app
 
 npm install
 🛠️ Desarrollo
-bash
-Copiar
-Editar
+
 
 # Levantar JSON Server (para datos fake)
 
@@ -40,9 +35,6 @@ npx json-server --watch db.json --port 3001
 
 npm run dev
 🧪 Testing
-bash
-Copiar
-Editar
 
 # Ejecutar tests con cobertura
 
@@ -56,15 +48,13 @@ store/
 🛡️ MSW intercepta peticiones en tests para aislarlos del backend.
 
 📂 Estructura del proyecto
-bash
-Copiar
-Editar
 src/
 ├── components/ # Componentes UI (TodoList, TodoItem, etc.)
 ├── store/ # Zustand stores (estado global)
 ├── mocks/ # MSW handlers & server para tests
 ├── styles/ # Tailwind configs
 └── App.jsx # Root component
+
 📝 Features
 🔄 Listado y gestión de tareas (CRUD).
 
@@ -76,19 +66,3 @@ src/
 
 📊 Reportes de cobertura detallados (lcov, html).
 
-💡 Futuras mejoras
-Persistencia en localStorage.
-
-Drag & Drop para reordenar tareas.
-
-Tests e2e con Playwright.
-
-Dark Mode.
-
-🐱‍🏍 Autor
-Hecho con ❤️ por Rud.
-
-¿Quieres que también te dé un badge bonito de cobertura + estado de tests en el README?
-Solo dime:
-"Rud quiere los badges de la victoria 🏅"
-y te los armo visualmente chulos. 😎
